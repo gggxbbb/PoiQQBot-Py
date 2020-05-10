@@ -24,7 +24,7 @@ async def Bind(session: CommandSession):
                 ws = create_connection("ws://127.0.0.1:30000")
             except:
                 await session.send('[CQ:at,qq={0}] 服务器去火星了,等会儿再试试吧'.format(SenderQQNumber))
-            ws.send(('whitelist add \"%s\"' % SenderGamerName.replace('\n',' '))
+            ws.send(('whitelist add \"%s\"' % SenderGamerName.replace('\n',' ')))
             time.sleep(0.1)
             result = ws.recv()
             if result == "Player added to whitelist":
